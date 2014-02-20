@@ -1,0 +1,10 @@
+
+cmake_minimum_required(VERSION 2.8.7)
+project(mpi_bench)
+set(dir ${CMAKE_CURRENT_SOURCE_DIR}/build)
+set(EXECUTABLE_OUTPUT_PATH ${dir} CACHE PATH "Build directory" FORCE)
+set(LIBRARY_OUTPUT_PATH ${dir} CACHE PATH "Build directory" FORCE)
+add_definitions( -DMPI_PROFILE ) 
+include_directories("include")
+include_directories("/usr/include/mpi")
+add_library(mpprof SHARED src/mpi_bench.cpp)
